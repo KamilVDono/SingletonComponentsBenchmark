@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SingletonComponentsBenchmark")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+91f85901d8144f6b372d1ca63f7b99addfb51701")]
 [assembly: System.Reflection.AssemblyProductAttribute("SingletonComponentsBenchmark")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SingletonComponentsBenchmark")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

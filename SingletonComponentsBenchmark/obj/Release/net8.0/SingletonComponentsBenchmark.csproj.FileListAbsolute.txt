@@ -17,3 +17,4 @@ C:\Users\kamil\RiderProjects\SingletonComponentsBenchmark\SingletonComponentsBen
 C:\Users\kamil\RiderProjects\SingletonComponentsBenchmark\SingletonComponentsBenchmark\obj\Release\net8.0\SingletonComponentsBenchmark.pdb
 C:\Users\kamil\RiderProjects\SingletonComponentsBenchmark\SingletonComponentsBenchmark\obj\Release\net8.0\SingletonComponentsBenchmark.genruntimeconfig.cache
 C:\Users\kamil\RiderProjects\SingletonComponentsBenchmark\SingletonComponentsBenchmark\obj\Release\net8.0\ref\SingletonComponentsBenchmark.dll
+C:\Users\kamil\RiderProjects\SingletonComponentsBenchmark\SingletonComponentsBenchmark\obj\Release\net8.0\SingletonComponentsBenchmark.sourcelink.json

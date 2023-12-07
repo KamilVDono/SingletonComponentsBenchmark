@@ -2,7 +2,6 @@
 using SingletonComponentsBenchmark.Components;
 
 SingletonStorageSlow storageSlow = null;
-SingletonStorageFast storageFast = null;
 
 void PrepareSlow()
 {
@@ -21,25 +20,6 @@ void PrepareSlow()
 	storageSlow.Add(new Component10());
 	storageSlow.Add(new Component11());
 	storageSlow.Add(new Component12());
-}
-
-void PrepareFast()
-{
-	storageFast = new SingletonStorageFast(100);
-	storageFast.Add(new Component1());
-	storageFast.Add(new Component1());
-	storageFast.Add(new Component1());
-	storageFast.Add(new Component2());
-	storageFast.Add(new Component3());
-	storageFast.Add(new Component4());
-	storageFast.Add(new Component5());
-	storageFast.Add(new Component6());
-	storageFast.Add(new Component7());
-	storageFast.Add(new Component8());
-	storageFast.Add(new Component9());
-	storageFast.Add(new Component10());
-	storageFast.Add(new Component11());
-	storageFast.Add(new Component12());
 }
 
 new BenchmarkRunner
@@ -66,23 +46,23 @@ new BenchmarkRunner
 		storageSlow.Add(new Component11());
 		storageSlow.Add(new Component12());
 	}, "Add/Slow", () => storageSlow = new SingletonStorageSlow(100))
-	.AddCase(() =>
-	{
-		storageFast.Add(new Component1());
-		storageFast.Add(new Component1());
-		storageFast.Add(new Component1());
-		storageFast.Add(new Component2());
-		storageFast.Add(new Component3());
-		storageFast.Add(new Component4());
-		storageFast.Add(new Component5());
-		storageFast.Add(new Component6());
-		storageFast.Add(new Component7());
-		storageFast.Add(new Component8());
-		storageFast.Add(new Component9());
-		storageFast.Add(new Component10());
-		storageFast.Add(new Component11());
-		storageFast.Add(new Component12());
-	}, "Add/Fast", () => storageFast = new SingletonStorageFast(100))
+	// .AddCase(() =>
+	// {
+	// 	storageFast.Add(new Component1());
+	// 	storageFast.Add(new Component1());
+	// 	storageFast.Add(new Component1());
+	// 	storageFast.Add(new Component2());
+	// 	storageFast.Add(new Component3());
+	// 	storageFast.Add(new Component4());
+	// 	storageFast.Add(new Component5());
+	// 	storageFast.Add(new Component6());
+	// 	storageFast.Add(new Component7());
+	// 	storageFast.Add(new Component8());
+	// 	storageFast.Add(new Component9());
+	// 	storageFast.Add(new Component10());
+	// 	storageFast.Add(new Component11());
+	// 	storageFast.Add(new Component12());
+	// }, "Add/Fast", () => storageFast = new SingletonStorageFast(100))
 	// Get value
 	.AddCase(() =>
 	{
@@ -94,16 +74,6 @@ new BenchmarkRunner
 		acc += storageSlow.Value<Component5>().value;
 		acc += storageSlow.Value<Component6>().value;
 	}, "Get/Slow", PrepareSlow)
-	.AddCase(() =>
-	{
-		var acc = 0;
-		acc += storageFast.Value<Component1>().value;
-		acc += storageFast.Value<Component2>().value;
-		acc += storageFast.Value<Component3>().value;
-		acc += storageFast.Value<Component4>().value;
-		acc += storageFast.Value<Component5>().value;
-		acc += storageFast.Value<Component6>().value;
-	}, "Get/Fast", PrepareFast)
 	// Has
 	.AddCase(() =>
 	{
@@ -123,24 +93,6 @@ new BenchmarkRunner
 		storageSlow.Has<Component26>();
 		storageSlow.Has<Component27>();
 	}, "Has/Slow", PrepareSlow)
-	.AddCase(() =>
-	{
-		storageFast.Has<Component1>();
-		storageFast.Has<Component2>();
-		storageFast.Has<Component3>();
-		storageFast.Has<Component4>();
-		storageFast.Has<Component5>();
-		storageFast.Has<Component6>();
-		storageFast.Has<Component7>();
-
-		storageFast.Has<Component21>();
-		storageFast.Has<Component22>();
-		storageFast.Has<Component23>();
-		storageFast.Has<Component24>();
-		storageFast.Has<Component25>();
-		storageFast.Has<Component26>();
-		storageFast.Has<Component27>();
-	}, "Has/Fast", PrepareFast)
 	// Update
 	.AddCase(() =>
 	{
@@ -164,14 +116,6 @@ new BenchmarkRunner
 		cmp5.value += 5;
 		storageSlow.Add(cmp5);
 	}, "Update/Slow", PrepareSlow)
-	.AddCase(() =>
-	{
-		storageFast.Value<Component1>().value++;
-		storageFast.Value<Component2>().value += 2;
-		storageFast.Value<Component3>().value += 3;
-		storageFast.Value<Component4>().value += 4;
-		storageFast.Value<Component5>().value += 5;
-	}, "Update/Fast", PrepareFast)
 	// Remove
 	.AddCase(() =>
 	{
@@ -191,23 +135,5 @@ new BenchmarkRunner
 		storageSlow.Remove<Component26>();
 		storageSlow.Remove<Component27>();
 	}, "Remove/Slow", PrepareSlow)
-	.AddCase(() =>
-	{
-		storageFast.Remove<Component1>();
-		storageFast.Remove<Component2>();
-		storageFast.Remove<Component3>();
-		storageFast.Remove<Component4>();
-		storageFast.Remove<Component5>();
-		storageFast.Remove<Component6>();
-		storageFast.Remove<Component7>();
-
-		storageFast.Remove<Component21>();
-		storageFast.Remove<Component22>();
-		storageFast.Remove<Component23>();
-		storageFast.Remove<Component24>();
-		storageFast.Remove<Component25>();
-		storageFast.Remove<Component26>();
-		storageFast.Remove<Component27>();
-	}, "Remove/Fast", PrepareFast)
 	.DoTest()
 	.DumpResults(Console.Out);
