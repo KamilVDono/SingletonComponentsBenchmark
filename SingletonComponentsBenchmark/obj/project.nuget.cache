@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "moP6z5RqRlR7eFt6brtZoaTp991CwdX0U2RqLSu0g3pcxJ6fbo6xspgNNPnpgOC2zdVqE+DC4s9RmqaL0gwvsg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kamil\\RiderProjects\\SingletonComponentsBenchmark\\SingletonComponentsBenchmark\\SingletonComponentsBenchmark.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kamil\\.nuget\\packages\\system.codedom\\8.0.0\\system.codedom.8.0.0.nupkg.sha512",
+    "C:\\Users\\kamil\\.nuget\\packages\\system.management\\8.0.0\\system.management.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
